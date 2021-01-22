@@ -12,12 +12,13 @@ public class Movie {
 	private String imdbRating;
 	private String imdbVotes;
     private String youtubeUrl;
+    private String description;
     
     
-	public Movie(String regionCode, OmdbSummary omdb, String youtubeUrl) {
+	public Movie(YoutubeSummary summary,String title,OmdbSummary omdb, String youtubeUrl, String description) {
 		super();
-		this.regionCode = regionCode;
-		this.Title = omdb.getTitle();
+		this.regionCode = summary.getRegionCode();
+		this.Title = title;
 		this.Year = omdb.getYear();
 		this.Released = omdb.getReleased();
 		this.Director = omdb.getDirector();
@@ -27,6 +28,7 @@ public class Movie {
 		this.imdbRating = omdb.getImdbRating();
 		this.imdbVotes = omdb.getImdbVotes();
 		this.youtubeUrl = youtubeUrl;
+		this.description = description;
 	}
 	public String getRegionCode() {
 		return regionCode;
@@ -40,18 +42,8 @@ public class Movie {
 	public void setTitle(String title) {
 		Title = title;
 	}
-	public String getYear() {
-		return Year;
-	}
-	public void setYear(String year) {
-		Year = year;
-	}
-	public String getReleased() {
-		return Released;
-	}
-	public void setReleased(String released) {
-		Released = released;
-	}
+	
+
 	public String getDirector() {
 		return Director;
 	}
@@ -63,12 +55,6 @@ public class Movie {
 	}
 	public void setWriter(String writer) {
 		Writer = writer;
-	}
-	public String getActor() {
-		return Actor;
-	}
-	public void setActor(String actor) {
-		Actor = actor;
 	}
 	public String getLanguage() {
 		return Language;
@@ -93,6 +79,12 @@ public class Movie {
 	}
 	public void setYoutubeUrl(String youtubeUrl) {
 		this.youtubeUrl = youtubeUrl;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }

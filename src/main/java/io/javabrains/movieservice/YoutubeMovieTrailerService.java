@@ -42,7 +42,7 @@ public class YoutubeMovieTrailerService {
             String videoId = items.getId().getVideoId();
             String trailerSource = "https://www.youtube.com/embed/%s?playlist=%s&loop=1";
             trailerSource = String.format(trailerSource, videoId, videoId);
-            listOfMovies.add(new Movie(movieSummary.getRegionCode(), omdb,trailerSource));
+            listOfMovies.add(new Movie(movieSummary,snippet.getTitle(), omdb,trailerSource, snippet.getDescription()));
         }
 
         return listOfMovies;
